@@ -1,0 +1,28 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "连接 Incus",
+        "description": "将已受信任的客户端证书及私钥放入 Home Assistant 配置目录，并填写文件路径。对于使用自签名证书的 Incus 服务器，建议将服务器证书作为 CA 证书文件。项目填写 * 表示发现所有有权访问的项目。",
+        "data": {
+          "host": "Incus 主机名或 IP 地址",
+          "port": "HTTPS 端口",
+          "cert_path": "客户端证书文件路径",
+          "key_path": "客户端私钥文件路径",
+          "ca_path": "服务器 CA / 证书文件路径（可选）",
+          "verify_ssl": "验证服务器 TLS 证书",
+          "project": "项目名称（* 表示全部）"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "无法连接到 Incus API，请检查地址、项目和网络。",
+      "invalid_certificate": "无法加载客户端证书或私钥，请检查路径和权限。",
+      "invalid_server_certificate": "无法验证 Incus 服务器证书，请提供服务器 CA 或证书文件。",
+      "invalid_auth": "客户端证书未受信任，或无权列出实例。"
+    },
+    "abort": {
+      "already_configured": "此 Incus 主机和项目已添加。"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connect to Incus",
+        "description": "Place a trusted client certificate and private key in the Home Assistant configuration directory. Enter their file paths. For self-signed Incus servers, supply the server certificate as the CA file (recommended). Project * discovers all accessible projects.",
+        "data": {
+          "host": "Incus host or IP address",
+          "port": "HTTPS port",
+          "cert_path": "Client certificate file path",
+          "key_path": "Client private key file path",
+          "ca_path": "Server CA or certificate file path (optional)",
+          "verify_ssl": "Verify server TLS certificate",
+          "project": "Project name (* for all projects)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Cannot connect to the Incus API. Check the address, project, and network.",
+      "invalid_certificate": "Cannot load the client certificate or key. Check the file paths and permissions.",
+      "invalid_server_certificate": "Cannot verify the Incus server certificate. Supply it as a CA file.",
+      "invalid_auth": "The client certificate is not trusted or cannot list instances."
+    },
+    "abort": {
+      "already_configured": "This Incus host and project are already configured."
+    }
+  }
+}
