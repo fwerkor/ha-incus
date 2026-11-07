@@ -58,11 +58,39 @@ For verifying a self-signed Incus server, obtain its public server certificate (
 
 ### Install
 
-**HACS:** Open HACS → the menu → **Custom repositories**, paste `https://github.com/fwerkor/ha-incus`, select **Integration**, install it and restart Home Assistant.
+**This project is a Home Assistant custom integration, NOT an HAOS App/Add-on.**
+Do not add it under **Settings → Apps → Add repository**. That page reports
+`is not a valid app repository` because this repository does not provide an HAOS App.
 
-**Manual:** Copy `custom_components/incus` to `<HA config>/custom_components/incus` and restart Home Assistant.
+#### Home Assistant 2026.11 and later (built-in Marketplace)
 
-Then go to **Settings → Devices & services → Add integration**, search `Incus`, and enter:
+Starting with Home Assistant 2026.11, Marketplace replaces HACS and is built into Home Assistant:
+
+1. First update **Home Assistant Core** to 2026.11 or later if `Marketplace` is not present.
+2. Open **Settings → Marketplace** as an administrator.
+3. Select **Add from link** in the upper-right corner.
+4. Enter `https://github.com/fwerkor/ha-incus`, select **Add**, and choose **Integration** if prompted.
+5. Open the new repository entry and select **Install**.
+6. Complete the Incus setup flow under **Devices & services**.
+
+Connecting a GitHub account can be required to add a custom Marketplace repository.
+A separate HACS installation is not supported on Home Assistant 2026.11 or later.
+
+#### Home Assistant 2026.10 and earlier (HACS)
+
+First install HACS (if it is not already installed), using the official guide:
+https://www.hacs.dev/docs/use/download/download/
+
+Open **HACS → ⋮ → Custom repositories**, paste `https://github.com/fwerkor/ha-incus`,
+select **Integration**, install it, and restart Home Assistant. Then go to
+**Settings → Devices & services → Add integration → Incus**.
+
+#### Manual
+
+Copy `custom_components/incus` to `<HA config>/custom_components/incus`,
+restart Home Assistant, and open **Settings → Devices & services → Add integration → Incus**.
+
+For any of these methods, enter the following connection details:
 
 | Field | Example |
 | --- | --- |
